@@ -135,8 +135,18 @@ header.scrolled {
     padding: 10px 20px;
 }
 
+.logo {
+    display: flex;
+    align-items: center;
+    flex-shrink: 1;
+    min-width: 0;
+}
+
 .logo img {
     height: 65px;
+    width: auto;
+    max-width: 280px;
+    object-fit: contain;
 }
 
 .nav-links {
@@ -219,10 +229,15 @@ header.scrolled {
     flex-direction: column;
     cursor: pointer;
     gap: 6px;
+    padding: 10px; /* Increased touch target */
+    z-index: 1002;
+    background: transparent;
+    border: none;
+    flex-shrink: 0;
 }
 
 .hamburger span {
-    width: 30px;
+    width: 32px;
     height: 3px;
     background: var(--text-light);
     border-radius: 3px;
@@ -340,6 +355,17 @@ header.scrolled {
 @keyframes float {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-20px); }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Intersection Observer Animations */
@@ -837,23 +863,38 @@ footer {
     font-weight: 800;
 }
 
-/* Mobile Media Queries */
 @media (max-width: 992px) {
+    .nav-container {
+        padding: 5px 10px;
+    }
+
+    .logo img {
+        height: 40px; /* Even smaller for mobile to fit better */
+        max-width: 240px;
+    }
+
+    .hamburger span {
+        height: 4px; /* Thicker on mobile */
+        width: 28px;
+    }
+
     .nav-links {
         display: none;
         position: fixed;
-        top: 85px;
+        top: 65px; /* Match mobile header height */
         left: 0;
         width: 100%;
-        height: calc(100vh - 85px);
+        height: calc(100vh - 65px);
         background: var(--primary-color);
         flex-direction: column;
-        padding: 40px 20px;
+        padding: 30px 20px;
         overflow-y: auto;
+        z-index: 1001;
     }
 
     .nav-links.active {
         display: flex;
+        animation: fadeInDown 0.3s ease;
     }
 
     .nav-item {
