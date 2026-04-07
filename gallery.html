@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery | MSPVL Polytechnic College</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .gallery-item {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            height: 250px;
+            cursor: pointer;
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        .gallery-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(30, 58, 138, 0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            color: white;
+            font-weight: 600;
+        }
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+
+    <header id="header"></header>
+
+    <section style="background: var(--gradient-blue); color: white; padding: 120px 5% 60px; text-align: center;">
+        <h1 style="color: white; font-size: 3rem;">Photo Gallery</h1>
+        <p>Capturing the vibrant life and events at MSPVL</p>
+    </section>
+
+    <main>
+        <section>
+            <div class="gallery-grid">
+                <div class="gallery-item reveal">
+                    <img src="/images/College Front View copy_3.jpg" alt="Campus">
+                    <div class="gallery-overlay">Main Campus</div>
+                </div>
+                <div class="gallery-item reveal">
+                    <img src="/images/classroom.jpg" alt="Classroom">
+                    <div class="gallery-overlay">Modern Classrooms</div>
+                </div>
+                <div class="gallery-item reveal">
+                    <img src="/images/event organised.jpg" alt="Events">
+                    <div class="gallery-overlay">College Events</div>
+                </div>
+                <div class="gallery-item reveal">
+                    <img src="/images/sports.jpg" alt="Sports">
+                    <div class="gallery-overlay">Sports Meet</div>
+                </div>
+                <div class="gallery-item reveal">
+                    <img src="/images/placement.jpg" alt="Placement">
+                    <div class="gallery-overlay">Placement Drive</div>
+                </div>
+                <div class="gallery-item reveal">
+                    <img src="/images/toppers.jpg" alt="Academic">
+                    <div class="gallery-overlay">Academic Toppers</div>
+                </div>
+                <div class="gallery-item reveal">
+                    <img src="/images/iv4.jpg" alt="Industail Visit">
+                    <div class="gallery-overlay">Industrial Visit</div>
+                </div>
+                <div class="gallery-item reveal">
+                    <img src="/images/parents meeting.jpg" alt="Meeting">
+                    <div class="gallery-overlay">Parents Meeting</div>
+                </div>
+                <div class="gallery-item reveal">
+                    <img src="/images/infrastructure.jpg" alt="Infrastucture">
+                    <div class="gallery-overlay">Infrastructure</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <script src="/js/script.js"></script>
+</body>
+</html>

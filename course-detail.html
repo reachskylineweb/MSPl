@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Details | MSPVL Polytechnic College</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header id="header"></header>
+
+    <section style="background: var(--gradient-blue); color: white; padding: 120px 5% 60px; text-align: center;">
+        <h1 id="course-title" style="color: white; font-size: 3rem;">Department Details</h1>
+        <p>In-depth look at our technical specializations</p>
+    </section>
+
+    <main>
+        <section>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 50px; max-width: 1200px; margin: 0 auto; align-items: start;">
+                <div class="reveal">
+                    <img id="course-img" src="/images/dipolma in mech.jpg" alt="Course Image" style="width: 100%; border-radius: 20px; box-shadow: var(--shadow);">
+                </div>
+                <div class="reveal">
+                    <h2 id="dept-heading">Mechanical Engineering</h2>
+                    <p style="margin: 20px 0; font-size: 1.1rem; color: #444;">This department focuses on the design, analysis, and maintenance of mechanical systems. We provide students with extensive hands-on experience in our state-of-the-art workshops.</p>
+                    
+                    <h3 style="margin-top: 30px;">Key Laboratory Facilities</h3>
+                    <ul style="margin: 15px 0; padding-left: 20px; list-style-type: square; color: #666;">
+                        <li>Thermal Engineering Lab</li>
+                        <li>Hydraulic & Pneumatic Lab</li>
+                        <li>CNC & Robotics Center</li>
+                        <li>Machine Shop & Fitting Shop</li>
+                        <li>CAD/CAM Lab with Latest Software</li>
+                    </ul>
+
+                    <h3 style="margin-top: 30px;">Career Opportunities</h3>
+                    <p style="margin-top: 10px; color: #666;">Graduates can find opportunities in manufacturing plants, automotive industries, power plants, and government sectors like RRB, DRDO, and TNPSC.</p>
+                    
+                    <a href="/admission.html" class="btn btn-primary" style="margin-top: 30px;">Apply for this Course</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="footer"></footer>
+    <script src="/js/script.js"></script>
+    <script>
+        // Simple Script to change content based on URL param
+        const urlParams = new URLSearchParams(window.location.search);
+        const dept = urlParams.get('dept');
+        
+        const data = {
+            mechanical: {
+                title: "Mechanical Engineering",
+                img: "/images/dipolma in mech.jpg"
+            },
+            automobile: {
+                title: "Automobile Engineering",
+                img: "/images/dipolma in automobile.jpg"
+            },
+            civil: {
+                title: "Civil Engineering",
+                img: "/images/dipolma in civil.jpg"
+            },
+            computer: {
+                title: "Computer Engineering",
+                img: "/images/dipolma in cse.jpg"
+            },
+            eee: {
+                title: "EEE",
+                img: "/images/dipolma in eee.jpg"
+            },
+            ece: {
+                title: "ECE",
+                img: "/images/dipolma in ece.jpg"
+            }
+        };
+
+        if (dept && data[dept]) {
+            document.getElementById('course-title').innerText = data[dept].title;
+            document.getElementById('dept-heading').innerText = data[dept].title;
+            document.getElementById('course-img').src = data[dept].img;
+        }
+    </script>
+</body>
+</html>
