@@ -3,112 +3,339 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Courses Offered | MSPVL Polytechnic College</title>
+    <title>Our Courses | MSPVL Polytechnic College | Diploma Engineering Programs</title>
+    <meta name="description" content="Explore our industry-focused diploma engineering courses at MSPVL Polytechnic College. We offer specialized programs in Computer, ECE, EEE, Civil, Mechanical, and Automobile Engineering.">
+    
+    <!-- External Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- CSS -->
     <link rel="stylesheet" href="/css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .dept-section {
+            padding: 80px 0;
+            overflow: hidden;
+        }
+        .dept-section:nth-child(even) {
+            background-color: #ffffff;
+        }
+        .dept-image-wrapper {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            height: 400px;
+        }
+        .dept-image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .dept-section:hover .dept-image-wrapper img {
+            transform: scale(1.05);
+        }
+        .dept-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .dept-tag {
+            display: inline-block;
+            padding: 5px 15px;
+            background: rgba(30, 58, 138, 0.1);
+            color: var(--primary-color);
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .dept-title {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        .dept-description {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 25px;
+        }
+        .feature-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.95rem;
+            color: #444;
+            font-weight: 500;
+        }
+        .feature-item i {
+            color: var(--accent-color);
+            background: var(--primary-color);
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+        }
+        .hero-courses {
+            min-height: 60vh;
+            background: linear-gradient(rgba(30, 58, 138, 0.85), rgba(30, 58, 138, 0.85)), url('/images/College Front View copy_3.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding-top: 100px;
+        }
+        .hero-courses-content {
+            max-width: 800px;
+            padding: 0 20px;
+        }
+        .hero-courses h1 {
+            color: white;
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+        .hero-courses p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 30px;
+        }
+        @media (max-width: 768px) {
+            .hero-courses h1 { font-size: 2.5rem; }
+            .dept-title { font-size: 1.8rem; }
+            .feature-list { grid-template-columns: 1fr; }
+            .dept-image-wrapper { height: 300px; margin-bottom: 30px; }
+            .dept-section:nth-child(even) .dept-image-wrapper {
+                order: -1;
+            }
+        }
+    </style>
 </head>
 <body>
 
     <header id="header"></header>
 
-    <section style="background: var(--gradient-blue); color: white; padding: 120px 5% 60px; text-align: center;">
-        <h1 style="color: white; font-size: 3rem;">Diploma Courses Offered</h1>
-        <p>Three-year technical programs designed for industry readiness</p>
-    </section>
-
     <main>
-        <section>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto;">
-                
-                <!-- Course Card -->
-                <div class="reveal" style="background: white; border-radius: 20px; overflow: hidden; box-shadow: var(--shadow); transition: var(--transition);">
-                    <img src="/images/dipolma in mech.jpg" alt="Mechanical Engineering" style="width: 100%; height: 220px; object-fit: cover;">
-                    <div style="padding: 30px;">
-                        <h3 style="margin-bottom: 15px;">Diploma in Mechanical Engineering</h3>
-                        <p style="color: #666; margin-bottom: 20px;">Comprehensive training in tools, machines, and manufacturing processes. Includes CAD/CAM labs and industrial robotics.</p>
-                        <div style="display: flex; gap: 10px; margin-bottom: 20px;">
-                            <span style="background: #e2e8f0; padding: 5px 12px; border-radius: 20px; font-size: 0.8rem;">3 Years</span>
-                            <span style="background: #e2e8f0; padding: 5px 12px; border-radius: 20px; font-size: 0.8rem;">Full Time</span>
-                        </div>
-                        <a href="/course-detail.html?dept=mechanical" class="btn btn-primary" style="width: 100%;">View Details</a>
-                    </div>
+        <!-- Hero Section -->
+        <section class="hero-courses">
+            <div class="hero-courses-content reveal">
+                <h1 class="tamil-text">தொழில்நுட்ப கல்விப் பாடப்பிரிவுகள்</h1>
+                <h1>Industry-Ready Diploma Engineering Courses</h1>
+                <p>MSPVL Polytechnic College offers premier technical education across major engineering disciplines. Our curriculum is designed to bridge the gap between academia and industry, empowering the next generation of engineers since 1983.</p>
+                <div class="hero-btns">
+                    <a href="/admission.html" class="btn btn-primary">Enquire Now</a>
                 </div>
-
-                <!-- Course Card -->
-                <div class="reveal" style="background: white; border-radius: 20px; overflow: hidden; box-shadow: var(--shadow); transition: var(--transition);">
-                    <img src="/images/dipolma in automobile.jpg" alt="Automobile Engineering" style="width: 100%; height: 220px; object-fit: cover;">
-                    <div style="padding: 30px;">
-                        <h3 style="margin-bottom: 15px;">Diploma in Automobile Engineering</h3>
-                        <p style="color: #666; margin-bottom: 20px;">Specialized focus on engine systems, vehicle dynamics, and modern automotive technology with hands-on workshop experience.</p>
-                        <div style="display: flex; gap: 10px; margin-bottom: 20px;">
-                            <span style="background: #e2e8f0; padding: 5px 12px; border-radius: 20px; font-size: 0.8rem;">3 Years</span>
-                            <span style="background: #e2e8f0; padding: 5px 12px; border-radius: 20px; font-size: 0.8rem;">Full Time</span>
-                        </div>
-                        <a href="/course-detail.html?dept=automobile" class="btn btn-primary" style="width: 100%;">View Details</a>
-                    </div>
-                </div>
-
-                <!-- Course Card -->
-                <div class="reveal" style="background: white; border-radius: 20px; overflow: hidden; box-shadow: var(--shadow); transition: var(--transition);">
-                    <img src="/images/dipolma in civil.jpg" alt="Civil Engineering" style="width: 100%; height: 220px; object-fit: cover;">
-                    <div style="padding: 30px;">
-                        <h3 style="margin-bottom: 15px;">Diploma in Civil Engineering</h3>
-                        <p style="color: #666; margin-bottom: 20px;">Learn structural design, surveying, and construction management to build the world of tomorrow.</p>
-                        <div style="display: flex; gap: 10px; margin-bottom: 20px;">
-                            <span style="background: #e2e8f0; padding: 5px 12px; border-radius: 20px; font-size: 0.8rem;">3 Years</span>
-                            <span style="background: #e2e8f0; padding: 5px 12px; border-radius: 20px; font-size: 0.8rem;">Full Time</span>
-                        </div>
-                        <a href="/course-detail.html?dept=civil" class="btn btn-primary" style="width: 100%;">View Details</a>
-                    </div>
-                </div>
-
-                <!-- Course Card -->
-                <div class="reveal" style="background: white; border-radius: 20px; overflow: hidden; box-shadow: var(--shadow); transition: var(--transition);">
-                    <img src="/images/dipolma in cse.jpg" alt="Computer Engineering" style="width: 100%; height: 220px; object-fit: cover;">
-                    <div style="padding: 30px;">
-                        <h3 style="margin-bottom: 15px;">Diploma in Computer Engineering</h3>
-                        <p style="color: #666; margin-bottom: 20px;">Explore software engineering, web technologies, and networking. State-of-the-art computer labs with high-speed internet.</p>
-                        <div style="display: flex; gap: 10px; margin-bottom: 20px;">
-                            <span style="background: #e2e8f0; padding: 5px 12px; border-radius: 20px; font-size: 0.8rem;">3 Years</span>
-                            <span style="background: #e2e8f0; padding: 5px 12px; border-radius: 20px; font-size: 0.8rem;">Full Time</span>
-                        </div>
-                        <a href="/course-detail.html?dept=computer" class="btn btn-primary" style="width: 100%;">View Details</a>
-                    </div>
-                </div>
-
-                <!-- Course Card -->
-                <div class="reveal" style="background: white; border-radius: 20px; overflow: hidden; box-shadow: var(--shadow); transition: var(--transition);">
-                    <img src="/images/dipolma in eee.jpg" alt="Electrical Engineering" style="width: 100%; height: 220px; object-fit: cover;">
-                    <div style="padding: 30px;">
-                        <h3 style="margin-bottom: 15px;">Diploma in EEE</h3>
-                        <p style="color: #666; margin-bottom: 20px;">Focused on Electrical & Electronics Engineering with expertise in power systems, electrical machines, and control circuits.</p>
-                        <div style="display: flex; gap: 10px; margin-bottom: 20px;">
-                            <span style="background: #e2e8f0; padding: 5px 12px; border-radius: 20px; font-size: 0.8rem;">3 Years</span>
-                            <span style="background: #e2e8f0; padding: 5px 12px; border-radius: 20px; font-size: 0.8rem;">Full Time</span>
-                        </div>
-                        <a href="/course-detail.html?dept=eee" class="btn btn-primary" style="width: 100%;">View Details</a>
-                    </div>
-                </div>
-
-                <!-- Course Card -->
-                <div class="reveal" style="background: white; border-radius: 20px; overflow: hidden; box-shadow: var(--shadow); transition: var(--transition);">
-                    <img src="/images/dipolma in ece.jpg" alt="Electronics Engineering" style="width: 100%; height: 220px; object-fit: cover;">
-                    <div style="padding: 30px;">
-                        <h3 style="margin-bottom: 15px;">Diploma in ECE</h3>
-                        <p style="color: #666; margin-bottom: 20px;">Electronics & Communication Engineering covering digital electronics, microprocessors, and wireless communication systems.</p>
-                        <div style="display: flex; gap: 10px; margin-bottom: 20px;">
-                            <span style="background: #e2e8f0; padding: 5px 12px; border-radius: 20px; font-size: 0.8rem;">3 Years</span>
-                            <span style="background: #e2e8f0; padding: 5px 12px; border-radius: 20px; font-size: 0.8rem;">Full Time</span>
-                        </div>
-                        <a href="/course-detail.html?dept=ece" class="btn btn-primary" style="width: 100%;">View Details</a>
-                    </div>
-                </div>
-
             </div>
         </section>
+
+        <!-- Intro Section -->
+        <section style="background: white; padding: 80px 0 40px;">
+            <div class="container">
+                <div class="section-title reveal">
+                    <h2>Choose Your Engineering Path</h2>
+                    <div class="underline"></div>
+                    <p style="max-width: 800px; margin: 20px auto 0; font-size: 1.1rem; color: #666;">
+                        Our institution offers AICTE-approved diploma programs across six core engineering departments. Each course is structured to provide a perfect blend of theoretical foundation and practical expertise, ensuring our graduates are ready for both industry roles and higher academic pursuits.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Department 1: CSE -->
+        <section class="dept-section" id="cse">
+            <div class="container reveal">
+                <div class="grid-2">
+                    <div class="dept-image-wrapper">
+                        <img src="/images/dipolma in cse.jpg" alt="Computer Engineering Laboratory">
+                    </div>
+                    <div class="dept-content">
+                        <span class="dept-tag">Dept of Computer Engineering</span>
+                        <h2 class="dept-title">Computer Engineering (CSE)</h2>
+                        <p class="dept-description">Established in 2001, our Computer Engineering department focuses on producing globally competent professionals. We prepare students for the rapidly evolving digital world through rigorous training in programming, web development, and emerging technologies.</p>
+                        <ul class="feature-list">
+                            <li class="feature-item"><i class="fas fa-check"></i> Software & App Development</li>
+                            <li class="feature-item"><i class="fas fa-check"></i> Network Administration</li>
+                            <li class="feature-item"><i class="fas fa-check"></i> Database Management</li>
+                            <li class="feature-item"><i class="fas fa-check"></i> Cloud Computing & AI</li>
+                            <li class="feature-item"><i class="fas fa-check"></i> Advanced Coding Labs</li>
+                            <li class="feature-item"><i class="fas fa-check"></i> Industry-Linked Projects</li>
+                        </ul>
+                        <div>
+                            <a href="/computer.html" class="btn btn-primary" style="background: var(--primary-color); color: white;">View CSE Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Department 2: ECE -->
+        <section class="dept-section" id="ece">
+            <div class="container reveal">
+                <div class="grid-2">
+                    <div class="dept-content">
+                        <span class="dept-tag">Dept of Electronics & Communication</span>
+                        <h2 class="dept-title">Electronics & Communication (ECE)</h2>
+                        <p class="dept-description">Our ECE program covers the core concepts of electronics, circuit design, and communication systems. In an era of smart gadgets and high-speed networks, we provide the skills needed to build and maintain the backbone of modern technology.</p>
+                        <ul class="feature-list">
+                            <li class="feature-item"><i class="fas fa-check"></i> Circuit Design & Testing</li>
+                            <li class="feature-item"><i class="fas fa-check"></i> Telecom Systems</li>
+                            <li class="feature-item"><i class="fas fa-check"></i> Microprocessor Design</li>
+                            <li class="feature-item"><i class="fas fa-check"></i> Embedded Systems</li>
+                            <li class="feature-item"><i class="fas fa-check"></i> Digital Signal Processing</li>
+                            <li class="feature-item"><i class="fas fa-check"></i> Industrial Internships</li>
+                        </ul>
+                        <div>
+                            <a href="/ece.html" class="btn btn-primary" style="background: var(--primary-color); color: white;">View ECE Details</a>
+                        </div>
+                    </div>
+                    <div class="dept-image-wrapper">
+                        <img src="/images/dipolma in ece.jpg" alt="Electronics & Communication Engineering">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Department 3: EEE -->
+        <section class="dept-section" id="eee">
+            <div class="container reveal">
+                <div class="grid-2">
+                    <div class="dept-image-wrapper">
+                        <img src="/images/dipolma in eee.jpg" alt="Electrical & Electronics Engineering">
+                    </div>
+                    <div class="dept-content">
+                        <span class="dept-tag">Dept of Electrical & Electronics</span>
+                        <h2 class="dept-title">Electrical & Electronics Engineering (EEE)</h2>
+                        <p class="dept-description">Established in 1997, the EEE department creates professionals with strong theoretical knownledge of power systems and electric machinery. We focus on the generation, transmission, and innovative use of electricity to power the world.</p>
+                        <ul class="feature-list">
+                            <li class="feature-item"><i class="fas fa-check"></i> Electric Machines Lab</li>
+                            <li class="feature-item"><i class="fas fa-check"></i> Power Grid Management</li>
+                            <li class="feature-item"><i class="fas fa-check"></i> Control Systems</li>
+                            <li class="feature-item"><i class="fas fa-check"></i> Renewable Energy Focus</li>
+                            <li class="feature-item"><i class="fas fa-check"></i> Microcontroller Labs</li>
+                            <li class="feature-item"><i class="fas fa-check"></i> High Voltage Safety</li>
+                        </ul>
+                        <div>
+                            <a href="/eee.html" class="btn btn-primary" style="background: var(--primary-color); color: white;">View EEE Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Department 4: Civil -->
+        <section class="dept-section" id="civil">
+            <div class="container reveal">
+                <div class="grid-2">
+                    <div class="dept-content">
+                        <span class="dept-tag">Dept of Civil Engineering</span>
+                        <h2 class="dept-title">Civil Engineering</h2>
+                        <p class="dept-description">Founded in 1985, our Civil Engineering department is one of the oldest and most respected. We train students in the professional practice of surveying, structural design, and construction management for sustainable infrastructure.</p>
+                        <ul class="feature-list">
+                            <li class="feature-item"><i class="fas fa-check"></i> Structural Engineering</li>
+                            <li class="feature-item"><i class="fas fa-check"></i> Advanced Surveying</li>
+                            <li class="feature-item"><i class="fas fa-check"></i> AutoCAD & GIS Training</li>
+                            <li class="feature-item"><i class="fas fa-check"></i> Soil Mechanics Lab</li>
+                            <li class="feature-item"><i class="fas fa-check"></i> Project Management</li>
+                            <li class="feature-item"><i class="fas fa-check"></i> Environmental Engineering</li>
+                        </ul>
+                        <div>
+                            <a href="/civil.html" class="btn btn-primary" style="background: var(--primary-color); color: white;">View Civil Details</a>
+                        </div>
+                    </div>
+                    <div class="dept-image-wrapper">
+                        <img src="/images/dipolma in civil.jpg" alt="Civil Engineering Site Work">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Department 5: Mechanical -->
+        <section class="dept-section" id="mechanical">
+            <div class="container reveal">
+                <div class="grid-2">
+                    <div class="dept-image-wrapper">
+                        <img src="/images/dipolma in mech.jpg" alt="Mechanical Engineering Workshop">
+                    </div>
+                    <div class="dept-content">
+                        <span class="dept-tag">Dept of Mechanical Engineering</span>
+                        <h2 class="dept-title">Mechanical Engineering</h2>
+                        <p class="dept-description">Established in 1997, the Mechanical department provides a comprehensive understanding of motion, energy, and force. Students gain practical experience in our advanced workshops, from traditional machining to modern robotics.</p>
+                        <ul class="feature-list">
+                            <li class="feature-item"><i class="fas fa-check"></i> Modern Workshop Practice</li>
+                            <li class="feature-item"><i class="fas fa-check"></i> CAD/CAM Automation</li>
+                            <li class="feature-item"><i class="fas fa-check"></i> Thermal & Power Engg</li>
+                            <li class="feature-item"><i class="fas fa-check"></i> Robotics & Mechatronics</li>
+                            <li class="feature-item"><i class="fas fa-check"></i> Fluid Power Systems</li>
+                            <li class="feature-item"><i class="fas fa-check"></i> Maintenance Training</li>
+                        </ul>
+                        <div>
+                            <a href="/mechanical.html" class="btn btn-primary" style="background: var(--primary-color); color: white;">View Mechanical Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Department 6: Automobile -->
+        <section class="dept-section" id="automobile">
+            <div class="container reveal">
+                <div class="grid-2">
+                    <div class="dept-content">
+                        <span class="dept-tag">Dept of Automobile Engineering</span>
+                        <h2 class="dept-title">Automobile Engineering</h2>
+                        <p class="dept-description">Our Automobile Engineering department, started in 1996, offers specialized training in production and service automation. With the exponential growth in the auto industry, we equip students with the skills to design and maintain futuristic motor vehicles.</p>
+                        <ul class="feature-list">
+                            <li class="feature-item"><i class="fas fa-check"></i> Engine Overhauling</li>
+                            <li class="feature-item"><i class="fas fa-check"></i> Chassis & Transmission</li>
+                            <li class="feature-item"><i class="fas fa-check"></i> Autotronics Specialist</li>
+                            <li class="feature-item"><i class="fas fa-check"></i> Emission Control Tech</li>
+                            <li class="feature-item"><i class="fas fa-check"></i> Two & Three Wheeler Tech</li>
+                            <li class="feature-item"><i class="fas fa-check"></i> Service Station Management</li>
+                        </ul>
+                        <div>
+                            <a href="/automobile.html" class="btn btn-primary" style="background: var(--primary-color); color: white;">View Automobile Details</a>
+                        </div>
+                    </div>
+                    <div class="dept-image-wrapper">
+                        <img src="/images/dipolma in automobile.jpg" alt="Automobile Engineering Workshop">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA Section -->
+        <section style="padding: 100px 0;">
+            <div class="cta-box reveal">
+                <h2>Begin Your Engineering Journey Today</h2>
+                <p style="font-size: 1.2rem; opacity: 0.9; margin-bottom: 40px; max-width: 800px; margin-left: auto; margin-right: auto;">Don't miss the opportunity to join MSVPL's legacy of excellence. Secure your future in engineering with our industry-leading diploma programs.</p>
+                <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+                    <a href="/admission.html" class="btn btn-primary" style="background: var(--accent-color); color: var(--primary-color); border: none;">RESERVE YOUR SEAT</a>
+                    <a href="/contact.html" class="btn btn-outline" style="border: 2px solid white;">TALK TO COUNSELOR</a>
+                </div>
+            </div>
+        </section>
+
     </main>
 
     <footer id="footer"></footer>
+
+    <!-- JS -->
     <script src="/js/script.js"></script>
 </body>
 </html>
